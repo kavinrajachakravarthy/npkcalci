@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NPK Calculator</title>
+    <link rel="stylesheet" href="npk_calci.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+    <script src="npk_calci.js" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <h1>NPK Calculator</h1>
+      <h2>(Nitrogen-Phosphorus-Phosphorus)</h2>
+      <form id="calculator-form">
+        <label for="ratio">Select NPK Ratio:</label>
+        <select id="ratio" name="ratio" required>
+          <option value="" disabled selected>Select NPK Ratio</option>
+          <!-- Options will be loaded from CSV -->
+        </select>
+        <label for="area">Enter Area (sq ft or acres):</label>
+        <input type="number" id="area" name="area" required min="0" required />
+        <label for="unit">Unit:</label>
+        <select id="unit" name="unit" required>
+          <option value="sqft">Square Feet</option>
+          <option value="acre">Acres</option>
+        </select>
+        <button type="button" onclick="calculateNPK()">Calculate</button>
+      </form>
+      <div id="result">
+        <!-- Results will be displayed here -->
+      </div>
+      <div id="error-message" style="color: red; display: none;"></div>
+            <!-- Error message will be displayed here -->
+        </div>
+    </div>
+  </body>
+</html>
